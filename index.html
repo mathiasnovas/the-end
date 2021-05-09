@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-ambisonic-component"></script>
+        <script src="/assets/js/play-on-vrdisplayactive-or-enter-vr.js"></script>
+        <script src="/assets/js/box.js"></script>
+        <script src="/assets/js/animate-on-vr.js"></script>
+        <script src="/assets/js/dust.js"></script>
+    </head>
+    <body>
+        <a-scene background="color: black">
+            <a-assets>
+                <audio src="/assets/audio/bg.wav" loop="false" id="bg"></audio>
+                <audio src="/assets/audio/robot.wav" loop="true" id="robot"></audio>
+                <audio src="/assets/audio/counting.wav" loop="true" id="counting"></audio>
+                <audio src="/assets/audio/moan.aif" loop="true" id="moan"></audio>
+            </a-assets>
+
+            <a-entity 
+                float 
+                id="rig" 
+                position="0 0 0"
+            >
+                <a-entity id="camera" look-controls wasd-controls move-controls camera>
+                </a-entity>
+            </a-entity>
+
+            <a-entity
+                animate-on-vr="property: position; to: 0 0 2000; dur: 600000"
+            >
+                <a-dust
+                    num-points="7000"
+                    dispersion="400"
+                    color="white"
+                    log=true
+                    position="0 0 -300"
+                ></a-dust>
+            </a-entity>
+
+            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+                
+            </a-entity>
+
+            <!-- Robot -->
+            <a-sphere
+                radius="10"
+                position="40 10 -3000"
+                color="black"
+                sound="src: #robot"
+                animate-on-vr="property: position; to: 0 0 2000; dur: 120000; delay: 3000; delay: 30000"
+                play-on-vrdisplayactivate-or-enter-vr
+            ></a-sphere>
+
+            <!-- Counting -->
+            <a-sphere
+                radius="80"
+                position="-300 10 -400"
+                color="black"
+                sound="src: #counting; loop: true"
+                animate-on-vr="property: position; to: 40 10 2000; dur: 60000; delay: 15000"
+                play-on-vrdisplayactivate-or-enter-vr
+            ></a-sphere>
+
+            <!-- Moan -->
+            <a-sphere
+                radius="80"
+                position="100 10 -4000"
+                color="red"
+                sound="src: #moan; loop: true"
+                animate-on-vr="property: position; to: 40 10 2000; dur: 120000; delay: 60000"
+                play-on-vrdisplayactivate-or-enter-vr
+            ></a-sphere>
+
+            <!-- <a-sphere
+                id="foo"
+                radius="10"
+                position="-20 20 -200"
+                color="blue"
+                sound="src: #robot"
+                animate-on-vr="property: position; to: 0 0 2000; dur: 30000; delay: 20000"
+                play-on-vrdisplayactivate-or-enter-vr="delay: 20000"
+            ></a-sphere> -->
+
+            <!-- <a-sphere
+                play-on-vrdisplayactivate-or-enter-vr
+                position="50 40 -600"
+                radius="20"
+                color="black"
+                sound="src: #robot; loop: true"
+            ></a-sphere>             -->
+
+            <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+            <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+            <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane> -->
+            <a-sky color="#000"></a-sky>
+
+            <a-ambisonic
+                id="ambisonic"
+                src="#bg"
+                play-on-vrdisplayactivate-or-enter-vr
+                channel-map="0, 3, 1, 2"
+                use-media-element="false"
+            ></a-ambisonic>
+        </a-scene>
+    </body>
+</html>
