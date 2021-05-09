@@ -10,10 +10,15 @@
     <body>
         <a-scene background="color: black">
             <a-assets>
-                <audio src="/assets/audio/bg.wav" autoplay loop="false" id="bg"></audio>
-                <audio src="/assets/audio/robot.wav" autoplay loop="true" id="robot"></audio>
+                <a-asset-item src="/assets/audio/bg.mp3" response-type="arraybuffer" id="bg"></a-asset-item>
+                <a-asset-item src="/assets/audio/robot.mp3" response-type="arraybuffer" id="robot"></a-asset-item>
+                <a-asset-item src="/assets/audio/counting.mp3" response-type="arraybuffer" id="counting"></a-asset-item>
+                <a-asset-item src="/assets/audio/moan.mp3" response-type="arraybuffer" id="moan"></a-asset-item>
+
+                <!-- <audio src="/assets/audio/bg.wav" autoplay loop="false" id="bg"></audio> -->
+                <!-- <audio src="/assets/audio/robot.wav" autoplay loop="true" id="robot"></audio>
                 <audio src="/assets/audio/counting.wav" autoplay loop="true" id="counting"></audio>
-                <audio src="/assets/audio/moan.wav" autoplay loop="true" id="moan"></audio>
+                <audio src="/assets/audio/moan.wav" autoplay loop="true" id="moan"></audio> -->
             </a-assets>
 
             <a-entity 
@@ -47,7 +52,7 @@
                 position="40 10 -3000"
                 color="black"
                 sound="src: #robot"
-                animate-on-vr="property: position; to: 0 0 2000; dur: 120000; delay: 3000; delay: 30000"
+                animate-on-vr="property: position; to: 0 0 2000; dur: 120000; delay: 30000"
                 play-on-vrdisplayactivate-or-enter-vr
             ></a-sphere>
 
@@ -57,7 +62,7 @@
                 position="-300 10 -400"
                 color="black"
                 sound="src: #counting; loop: true"
-                animate-on-vr="property: position; to: 40 10 2000; dur: 60000; delay: 15000"
+                animate-on-vr="property: position; to: 40 10 2000; dur: 60000"
                 play-on-vrdisplayactivate-or-enter-vr
             ></a-sphere>
 
