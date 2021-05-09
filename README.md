@@ -12,7 +12,7 @@
 
 3. Hit the *VR* button in the bottom right corner to start the experience.
 
-4. Put your phone into your cardboard-like VR headgear and enjoy!
+4. Connect your headphones, put your phone into your cardboard-like VR headgear, and enjoy!
 
 ### Notes
 
