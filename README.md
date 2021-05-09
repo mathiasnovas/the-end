@@ -6,7 +6,7 @@
 
 ## How to use (on a phone)
 
-1. Navigate to the demo on your phone: https://mathiasnovas.github.io/the-end/
+1. Navigate to the demo on your phone: https://end.helloearthinvader.com/
 
 2. Add the website to your homescreen. **This is important** to remove your browser's UI.
 
